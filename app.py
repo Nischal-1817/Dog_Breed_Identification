@@ -14,7 +14,7 @@ def prediction():
     model=load_model(model_path)
 
     imageFile=request.files['image_file']
-    image_path="C:/Users/geetha/OneDrive/Documents/codes visual/Projects/Dog_Prediction/images/"+imageFile.filename
+    image_path="images/"+imageFile.filename
     path=[image_path]
     imageFile.save(image_path)
 
