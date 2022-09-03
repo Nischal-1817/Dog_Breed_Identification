@@ -10,7 +10,7 @@ def home():
 
 @app.route('/',methods=['POST'])
 def prediction():
-    model_path='data/model.h5'
+    model_path='static/data/model.h5'
     model=load_model(model_path)
 
     imageFile=request.files['image_file']
@@ -26,7 +26,7 @@ def prediction():
     return render_template('basic.html',prediction_label=predictions_label)
 
 
-labels_csv=pd.read_csv("data/labels.csv")
+labels_csv=pd.read_csv("static/data/labels.csv")
 labels=labels_csv['breed'].to_numpy()
 unique_breeds=np.unique(labels)
 
